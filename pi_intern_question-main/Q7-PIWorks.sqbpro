@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Wilkins Inc/OneDrive/Desktop/Q7-PIWorks.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="958"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,25:maincountry_vaccination_stats"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="country_vaccination_stats" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="1" mode="0"/></sort><column_widths><column index="1" value="129"/><column index="2" value="93"/><column index="3" value="141"/><column index="4" value="285"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">SELECT DISTINCT(Country), Daily_Vaccinations FROM country_vaccination_stats
+WHERE Daily_Vaccinations ISNULL;
+</sql><sql name="SQL 2">SELECT DISTINCT(Country), Daily_Vaccinations
+,row_number() OVER(ORDER by Daily_Vaccinations ASC) as rn
+,row_number() OVER(ORDER by Daily_Vaccinations DESC) as rn_desc
+FROM country_vaccination_stats
+WHERE Daily_Vaccinations IS NULL
+ORDER BY Country;
+</sql><sql name="SQL 3">SELECT DISTINCT(Country), Daily_Vaccinations
+,row_number() OVER(ORDER by Daily_Vaccinations ASC) as rn
+,row_number() OVER(ORDER by Daily_Vaccinations DESC) as rn_desc
+FROM country_vaccination_stats
+WHERE Country = &quot;Argentina&quot; AND Daily_Vaccinations IS NOT NULL
+ORDER BY Country;
+
+SELECT DISTINCT(Country), Daily_Vaccinations
+,row_number() OVER(ORDER by Daily_Vaccinations ASC) as rn
+,row_number() OVER(ORDER by Daily_Vaccinations DESC) as rn_desc
+FROM country_vaccination_stats
+WHERE Country = &quot;Austria&quot; AND Daily_Vaccinations IS NOT NULL
+ORDER BY Country;
+
+SELECT DISTINCT(Country), Daily_Vaccinations
+,row_number() OVER(ORDER by Daily_Vaccinations ASC) as rn
+,row_number() OVER(ORDER by Daily_Vaccinations DESC) as rn_desc
+FROM country_vaccination_stats
+WHERE Country = &quot;Bahrain&quot; AND Daily_Vaccinations IS NOT NULL
+ORDER BY Country;
+
+SELECT DISTINCT(Country), Daily_Vaccinations
+,row_number() OVER(ORDER by Daily_Vaccinations ASC) as rn
+,row_number() OVER(ORDER by Daily_Vaccinations DESC) as rn_desc
+FROM country_vaccination_stats
+WHERE Country = &quot;Belgium&quot; AND Daily_Vaccinations IS NOT NULL
+ORDER BY Country;</sql><sql name="SQL 4">SELECT IFNULL(Daily_Vaccinations, 11704)
+FROM country_vaccination_stats
+WHERE Country = &quot;Argentina&quot;;
+
+SELECT IFNULL(Daily_Vaccinations, 7953)
+FROM country_vaccination_stats
+WHERE Country = &quot;Austria&quot;;
+
+SELECT IFNULL(Daily_Vaccinations, (3662+4080)/2)
+FROM country_vaccination_stats
+WHERE Country = &quot;Bahrain&quot;;
+
+SELECT IFNULL(Daily_Vaccinations, 3634)
+FROM country_vaccination_stats
+WHERE Country = &quot;Belgium&quot;;</sql><current_tab id="1"/></tab_sql></sqlb_project>
