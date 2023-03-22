@@ -4,6 +4,8 @@ Probabilistic Programming and Bayesian Data Analysis (COGS516 - METU - Graduate 
 
 This course will examine the basic principles of probabilistic programming and Bayesian modelling, for analysis of data which may come from observational or experimental cognitive science studies. A variety of Bayesian data analysis will be discussed and implemented in an expressive probabilistic programming language. Approaches for model building, model checking and model validation will be discussed following a Bayesian workflow.
 
+Introduction to Probabilistic Programming; generative modelling, Bayesian inference, executing probabilistic programs; exact inference; rejection sampling; importance sampling; Markov Chain Monte Carlo (MCMC); efficient MCMC Techniques; deep Probabilistic Programming; Probabilistic Programming applications.
+
 1. Probability and Inference
 2. Regression 
 3. Categories and Curves
